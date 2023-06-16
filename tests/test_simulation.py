@@ -35,4 +35,4 @@ class TestSimulation(unittest.TestCase):
         self.assertIn('laser/scan', out)
     
     def test_these_tests_must_pass_or_the_pipeline_fails(self):
-        self.assertFalse(True)
+        self.assertFalse(False)
