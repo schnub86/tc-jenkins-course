@@ -18,4 +18,4 @@ kill $STOP_ID
 rosservice call /gazebo/reset_simulation "{}"
 
 # Print the text that indicates that we are done here
-echo "Job finished"
+echo "Job finished now"
