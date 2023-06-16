@@ -1,4 +1,4 @@
-python -m unittest discover -v
+python -m unittest discover -s exam -v
 
 # Start the ROS script that TAKES OFF the drone in the background
 # Capture the process ID of that script in TAKEOFF_ID
