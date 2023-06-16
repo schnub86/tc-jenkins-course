@@ -1,7 +1,12 @@
 pipeline {
     agent any 
     stages {
-        stage('Run tests') {
+        stage('Run test') {
+            sh '''
+                python -m unittest discover -v
+            '''
+        }
+        stage('Land drone') {
             steps {
                 sh '''
                     rostopic pub /drone/land std_msgs/Empty '{}' &
