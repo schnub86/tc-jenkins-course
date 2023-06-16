@@ -2,13 +2,12 @@ pipeline {
     agent any {
         stage('Run tests') {
             steps {
-                # Start the ROS script that LANDS the drone
-                # Capture the process ID of that script in LAND_ID
-                # Wait for 5 seconds and then kill the process
-                rostopic pub /drone/land std_msgs/Empty '{}' &
-                LAND_ID=$!
-                sleep 5s
-                kill $LAND_ID
+                sh '''
+                    rostopic pub /drone/land std_msgs/Empty '{}' &
+                    LAND_ID=$!
+                    sleep 5s
+                    kill $LAND_ID
+                '''
             }
         }
     }
