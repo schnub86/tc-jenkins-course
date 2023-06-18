@@ -11,10 +11,9 @@ pipeline {
         stage('Land drone') {
             steps {
                 sh '''
-                    rostopic pub /drone/land std_msgs/Empty '{}' &
-                    LAND_ID=$!
-                    sleep 5s
-                    kill $LAND_ID
+                    rostopic pub /drone/land std_msgs/Empty '{}' & LAND_ID=$!
+                      sleep 10s
+                      kill $LAND_ID
                 '''
             }
         }
